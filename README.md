@@ -197,7 +197,7 @@ flowchart LR
 
 ## 目录结构 {#structure}
 
-![Structure](assets/images/readme/structure.png)
+> 以本 Markdown 树为唯一真相源（不另附图：旧 `structure.png` 曾误画 `src/`/`tests/` 与错误 docs 子树，已撤除）。
 
 ```text
 .
@@ -267,6 +267,8 @@ flowchart LR
 - 核心服务默认本地运行；模型调用需自行配置 API Key 或 Ollama。  
 - API Key / 自定义 Provider 端点仅存本地 MySQL，不上传项目方服务器。  
 - Docker 沙箱建议仅在受信任本机或私有网络启用。  
+- 开发拓扑无统一网关鉴权：默认绑定适合本机/受信局域网，**勿直接公网暴露**（详见 `CONTEXT.md` §6）。  
+
 
 ---
 

@@ -1,7 +1,7 @@
 (function () {
-  // README 预览壳：fetch README.md → marked 渲染
+  // README 预览壳：fetch README.md → marked 渲染 // 中文注释：本地 HTTP 预览入口逻辑
   const cfg = window.__PREVIEW_README__ || {
-    readmeFile: 'README.md',
+    readmeFile: 'README.md', // 中文注释：仓库根 README 相对路径
     pageLang: 'zh-CN',
     title: 'README Preview',
     toolbarTitle: 'README Preview',
@@ -19,11 +19,11 @@
     enPage: 'preview-readme.html',
   };
 
-  document.documentElement.lang = cfg.pageLang;
+  document.documentElement.lang = cfg.pageLang; // 中文注释：同步 html lang
   document.title = cfg.title;
 
-  const contentEl = document.getElementById('content');
-  const statusEl = document.getElementById('status');
+  const contentEl = document.getElementById('content'); // 中文注释：Markdown 渲染容器
+  const statusEl = document.getElementById('status'); // 中文注释：加载状态条
   const reloadBtn = document.getElementById('reload-btn');
   const toolbarTitle = document.getElementById('toolbar-title');
   const toolbarHint = document.getElementById('toolbar-hint');
@@ -39,14 +39,16 @@
   }
   if (footerNote) footerNote.textContent = cfg.footerNote;
 
-  marked.setOptions({ gfm: true, breaks: false });
+  marked.setOptions({ gfm: true, breaks: false }); // 中文注释：GFM 解析选项
 
   function setStatus(type, message) {
+    // 中文注释：更新状态条样式与文案
     statusEl.className = 'status ' + type;
     statusEl.textContent = message;
   }
 
   async function loadReadme() {
+    // 中文注释：禁止 file://（fetch 会失败）
     if (location.protocol === 'file:') {
       setStatus('error', cfg.fileProtocolError);
       contentEl.innerHTML =
@@ -58,6 +60,7 @@
     if (reloadBtn) reloadBtn.disabled = true;
 
     try {
+      // 中文注释：加时间戳避免浏览器强缓存旧 README
       const res = await fetch('./' + cfg.readmeFile + '?ts=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const md = await res.text();
@@ -73,6 +76,6 @@
     }
   }
 
-  if (reloadBtn) reloadBtn.addEventListener('click', loadReadme);
-  loadReadme();
+  if (reloadBtn) reloadBtn.addEventListener('click', loadReadme); // 中文注释：手动重新加载
+  loadReadme(); // 中文注释：首屏自动加载
 })();

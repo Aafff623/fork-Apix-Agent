@@ -77,7 +77,7 @@
 | Handoff | `docs/outputs/handoff/{theme}/YYYY-MM-DD-{branch}-{task}.md` |
 | Commit 攒批 | `docs/outputs/commit-history/{branch}/` |
 | ADR | `docs/adr/` |
-| 媒体 | `assets/`（`images/readme/` · `images/icon/` …） |
+| 媒体 | `assets/`（`images/readme/` · `images/icon/` …；无 `structure.png`，目录树看 README） |
 | 术语库 | `docs/glossary/` |
 | 客户端 | `CLIENT/apix-app/` |
 | Agent 服务 | `AGENT/agent_module/` |

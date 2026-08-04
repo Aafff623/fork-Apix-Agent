@@ -39,4 +39,5 @@
 
 ## structure.png
 
-- Optional; README uses Markdown tree. If generated: folder tree showing AGENT CLIENT FILE MEMORY TASK docs assets README setup scripts.
+- **已撤除（2026-08-05 抽检）**：生图易误画通用 `src/`/`tests/` 与错误 docs 子树，与本仓 `*/agent_module` · `apix-app` · `file_service` 等真实路径不符。
+- README **仅用 Markdown 树**作目录真相源；勿再生成/引用 `structure.png`，除非 prompt 强制真实路径且人工肉眼验收。

@@ -93,21 +93,27 @@ flowchart LR
 
 - **不写业务功能代码**于本轮 project-init；后续业务须 PRD 批准后再实施。
 - **密钥不上库**：用户 API Key / Provider 端点存本地 MySQL，禁止提交 `.env` 真密钥。
+- **示例凭据仅限本地**：代码/文档中的演示 MySQL 口令、AES 示例密钥、Milvus 默认口令**不得**当作生产凭据；后续业务 theme 应外置到环境变量（见 §7）。
+- **部署边界**：服务默认绑定 `0.0.0.0`、客户端指向 `127.0.0.1`；当前无统一网关鉴权 / 服务间 mTLS——**仅适合本机或受信局域网，禁止直接公网暴露**。
 - **沙箱安全**：代码执行依赖 Docker；仅建议在受信任本机/私网启用。
 - **端口硬编码**：改端口必须同步 client `config.js` 与各 `global_config.py`。
 - **Router 自动发现**：Python 服务扫描 `routers` 包挂载 `APIRouter`；新增路由按此约定。
 - **线性任务流编辑**：README 注明相关代码已损坏，后续版本修复——勿在文档里写成「已完备」。
 - **单一事实源**：禁止新建 `docs/agents/language.md` / `docs/agents/context.md`。
-- **媒体路径**：README 配图契约目录为 `assets/images/readme/`；禁止新建 `docs/images/`。
+- **媒体路径**：README 配图契约目录为 `assets/images/readme/`；禁止新建 `docs/images/`。目录结构以 README Markdown 树为准，不依赖 `structure.png`。
 
 ## 7. 已知缺口与待确认
 
 | 项 | 状态 |
 |---|---|
-| 系统化单元/集成/E2E 测试 | 缺失 |
+| 系统化单元/集成/E2E 测试 | 缺失（全仓约 0 测试文件） |
+| 示例密钥 / 口令外置与最小鉴权 | 高优缺口（见深度分析 canvas Risks） |
+| 服务绑定与公网暴露防护 | 高优缺口；开发默认应偏向本机 |
+| 端口 / URL 共享配置层 | 中优；改动易漏多处硬编码 |
 | 图任务流编辑 | 进行中（README Progress） |
 | 工作区时间旅行 / 定时任务 / 插件市场 / 多平台接入 | 未开始 |
 | 线性任务流编辑代码损坏 | 【待确认】修复排期与影响面 |
+| 遗留文件 / 本机绝对路径配置 | 【待确认】清理排期（业务 theme，非 init） |
 | 上游与本 fork 关系 | 远端 `Aafff623/fork-Apix-Agent`；分支 `Version_2.1` |
 
 ## 8. 资源与外部依赖

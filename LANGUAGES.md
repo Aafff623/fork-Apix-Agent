@@ -61,6 +61,7 @@
 | Preview 壳 | `preview-readme.{html,css,js}`，本地 HTTP 渲染 README |
 | 配图 brief | `docs/outputs/prd/readme-diagrams/readme-diagram-brief.md` |
 | 出图 prompt | `docs/outputs/prd/readme-diagrams/readme-image-prompts.md` |
+| 目录结构图 | **不用** `structure.png`；以 README `#structure` Markdown 树为准 |
 
 ## 5. 五种 Triage 标签
 

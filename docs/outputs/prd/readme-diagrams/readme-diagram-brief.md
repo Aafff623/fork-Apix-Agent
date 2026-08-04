@@ -16,14 +16,14 @@
 | 架构 | `architecture.png` | Client + 四服务 + 依赖 |
 | 技术栈 | `tech-stack.png` | 分层栈 |
 | 主链路 | `workflow.png` | 对话主路径 |
-| 目录结构 | Markdown 树（优先）· 可选 `structure.png` | 禁止 `<details>` |
+| 目录结构 | **仅** Markdown 树 | 禁止 `<details>`；`structure.png` 已撤除（易误导） |
 
 ## 资产清单
 
 | 文件 | 来源 | 状态 |
 |---|---|---|
 | banner / features / architecture / tech-stack / workflow | 生图 | Phase B 生成 |
-| structure.png | 可选 | 可用 Markdown 树代替 |
+| structure.png | 已撤除 | 2026-08-05 抽检：误图风险 > 收益 |
 | showcase-main/editor/settings/workspace | `README/source/*` | 已迁移 |
 | preview-shell.png | N/A | 声明省略 Preview 站 |
 
@@ -41,8 +41,9 @@
 
 ## 验收
 
-- [ ] 契约文件名落盘或书面占位
-- [ ] README 引用相对路径 `assets/images/readme/…`
-- [ ] Preview 省略理由已写
-- [ ] Showcase 引用真机图
-- [ ] 目录树直接呈现
+- [x] 契约文件名落盘或书面占位（structure 已书面撤除）
+- [x] README 引用相对路径 `assets/images/readme/…`
+- [x] Preview 省略理由已写
+- [x] Showcase 引用真机图
+- [x] 目录树直接呈现（无 `<details>`）
+- [x] 2026-08-05 抽检：空 `handoff/` 已删；CONTEXT 补安全/部署硬事实

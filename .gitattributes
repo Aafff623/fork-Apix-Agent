@@ -1,0 +1,9 @@
+# 统一文本换行；二进制媒体不换行转换（降低跨端乱码）
+* text=auto eol=lf
+*.md text
+*.mdc text
+*.png binary
+*.jpeg binary
+*.jpg binary
+*.gif binary
+*.webp binary
