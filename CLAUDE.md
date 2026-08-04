@@ -1,6 +1,14 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+> **Output Style**: `humanizer-output-style` — see `~/.claude/skills/humanizer-output-style/SKILL.md`  
+> **Windows Rules**: `.cursor/rules/windows-path-discipline.mdc` · `windows-shell-discipline.mdc`  
+> **Answer Format**: `.cursor/rules/answer-format.mdc`  
+> **Commit History**: `.cursor/rules/commit-history.mdc`  
+> **Voice**: `docs/agents/voice.md`  
+> **Facts**: `CONTEXT.md` · **Terms**: `LANGUAGES.md` · **Agent gates**: `AGENTS.md`
+
+This file provides guidance to Claude Code / Cursor Agents when working with code in this repository.
+维护协议与运行说明；不与 `AGENTS.md` / `CONTEXT.md` 抢事实源。
 
 ## Project overview
 
@@ -217,7 +225,7 @@ All four Python services auto-load `APIRouter` instances from their `routers` pa
 
 ### Issue tracker
 
-Issues live as GitHub issues in this repo. Use the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Default: local markdown under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
@@ -225,4 +233,9 @@ Use the canonical five labels: `needs-triage`, `needs-info`, `ready-for-agent`, 
 
 ### Domain docs
 
-Single-context repo: read `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+Single-context repo: read root `CONTEXT.md`, `LANGUAGES.md`, and `docs/adr/`. See `docs/agents/domain.md`.
+
+### Project rules (must load)
+
+Five MDC files under `.cursor/rules/` (`alwaysApply: true`):  
+`windows-path-discipline.mdc` · `windows-shell-discipline.mdc` · `answer-format.mdc` · `AGENTS.mdc` · `commit-history.mdc`.

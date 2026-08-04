@@ -68,3 +68,6 @@ temp/
 # Extra
 *.sqlite3
 *.db
+
+# Local agent scratch (Issue / backups)
+.scratch/
